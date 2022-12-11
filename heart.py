@@ -41,11 +41,11 @@ class Heart(QtWidgets.QLabel):
             yo = random.gauss(0, 0.25 * (index + 1)) * 10
             points.append((index + 1, int(x + xo), int(y + yo)))
 
-        if index == 0:
+        if index <= 1:
             for s in range(0, 5):
                 xo = random.gauss(0, 3) * 10
                 yo = random.gauss(0, 3) * 10
-                points.append((index, int(x + xo), int(y + yo)))
+                points.append((0, int(x + xo), int(y + yo)))
 
     def genHeart(self, points, size, cf):
         m = int(2 * math.pi * 1000)
@@ -64,9 +64,11 @@ class Heart(QtWidgets.QLabel):
 
     def genDataPoints(self):
 
+        # The first pen (index 0) is used for the sparkles only.
+        # Subsequent pens are used for the different concentric hearts.
         self.pens = [
-            QPen(QBrush(QColor("#ffd4ee")), 1, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
-            QPen(QBrush(QColor("#ffd4ee")), 12, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
+            QPen(QBrush(QColor("#ff77ae")), 2, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
+            QPen(QBrush(QColor("#ffd4ee")), 8, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
             QPen(QBrush(QColor("#ff77fc")), 6, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
             QPen(QBrush(QColor("#ff77ae")), 4, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
             QPen(QBrush(QColor("#ff1775")), 3, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
