@@ -8,7 +8,11 @@ I have to give credit to the following:
 
 * [A javascript implementation](https://qqqqqcy.github.io/heart_beat/#) - I only took the colours from it. Implemented my own logic and algorithm.
 * Used the third formula offered in this [article by Saanvi Gutta](https://blogs.lcps.org/academiesonline/2021/02/13/the-equation-of-the-heart/)
-* Learned a lot about Qt and PyQt5 from this [article by Salem Al Bream](https://www.pythonguis.com/tutorials/qpropertyanimation/)
+
+![Heart Formulaes](https://blogs.lcps.org/academiesonline/files/2021/02/new-hearts.jpg)
+
+* Learned a lot about Qt Animation and PyQt5 from this [article by Salem Al Bream](https://www.pythonguis.com/tutorials/qpropertyanimation/)
+* Learned how to draw on QPixmap and QPainter from this [article by Martin Fitzpatrick](https://www.pythonguis.com/tutorials/bitmap-graphics/)
 
 Thanks to the above references, I was able to hack this together.
 
