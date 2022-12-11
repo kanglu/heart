@@ -19,7 +19,9 @@ I tested on:
   * Windows 10
 
 # Installation
-I only tested this with python 3.10.8
+Use the following command line instructions on Ubuntu and macOS.
+
+Use equivalents on Windows 10.
 
 ```
 git clone https://github.com/kanglu/heart.git
