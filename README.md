@@ -23,7 +23,7 @@ I tested on:
   * Windows 10
 
 # Installation
-Use the following command line instructions on Ubuntu and macOS.
+Use the following command line instructions on Ubuntu and macOS. I am assuming that ```git``` is already installed.
 
 Use equivalents on Windows 10.
 
