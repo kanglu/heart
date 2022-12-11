@@ -33,15 +33,19 @@ class Heart(QtWidgets.QLabel):
     curFrame = pyqtProperty(int, getCurFrame, setCurFrame)
 
     def addMistForPoint(self, points, size, x, y):
-        for s in range(0, int(6 * size)):
-            xo = random.gauss(0, 0.5) * 10
-            yo = random.gauss(0, 0.5) * 10
-            points.append((0, int(x + xo), int(y + yo)))
 
-        for s in range(0, 5):
-            xo = random.gauss(0, 3) * 10
-            yo = random.gauss(0, 3) * 10
-            points.append((1, int(x + xo), int(y + yo)))
+        index = int(round((1.00 - size) / (self.step / 100), 0))
+
+        for s in range(0, int(6 * size)):
+            xo = random.gauss(0, 0.25 * (index + 1)) * 10
+            yo = random.gauss(0, 0.25 * (index + 1)) * 10
+            points.append((index + 1, int(x + xo), int(y + yo)))
+
+        if index == 0:
+            for s in range(0, 5):
+                xo = random.gauss(0, 3) * 10
+                yo = random.gauss(0, 3) * 10
+                points.append((index, int(x + xo), int(y + yo)))
 
     def genHeart(self, points, size, cf):
         m = int(2 * math.pi * 1000)
@@ -59,14 +63,23 @@ class Heart(QtWidgets.QLabel):
             self.addMistForPoint(points, size, x, y)
 
     def genDataPoints(self):
+
+        self.pens = [
+            QPen(QBrush(QColor("#ffd4ee")), 1, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
+            QPen(QBrush(QColor("#ffd4ee")), 12, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
+            QPen(QBrush(QColor("#ff77fc")), 6, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
+            QPen(QBrush(QColor("#ff77ae")), 4, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
+            QPen(QBrush(QColor("#ff1775")), 3, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
+            QPen(QBrush(QColor("#ff1775")), 2, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin),
+        ]
         self.frame = []
         for cf in range(0, self.maxFrame + 1):
             points = []
 
             # for each frame we will create the heart shape with a guassian mist around
             # the general shape
-
-            for perc in range(100, 70, -5):
+            self.step = len(self.pens)
+            for perc in range(100, 100 - ((self.step - 1) * len(self.pens)), -self.step):
                 self.genHeart(points, perc / 100.0, cf)
 
             self.frame.append(points)
@@ -79,11 +92,6 @@ class Heart(QtWidgets.QLabel):
     def initSetup(self):
 
         self.setPixmap(self.newCanvas())
-
-        brush = QBrush(QColor(231, 78, 189))
-        pen = QPen(brush, 3, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin)
-        pen2 = QPen(brush, 1.5, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin)
-        self.pens = [pen, pen2]
 
         dur = int(self.beatFrequency * 1000 / 60)
 
