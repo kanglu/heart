@@ -7,7 +7,7 @@ This is my first Qt program, and I kind of hacked this together until it looked 
 I have to give credit to the following:
 
 * [A javascript implementation](https://qqqqqcy.github.io/heart_beat/#) - I only took the colours from it. Implemented my own logic and algorithm.
-* Used the third formulat offered in this [article by Saanvi Gutta](https://blogs.lcps.org/academiesonline/2021/02/13/the-equation-of-the-heart/)
+* Used the third formula offered in this [article by Saanvi Gutta](https://blogs.lcps.org/academiesonline/2021/02/13/the-equation-of-the-heart/)
 * Learned a lot about Qt and PyQt5 from this [article by Salem Al Bream](https://www.pythonguis.com/tutorials/qpropertyanimation/)
 
 Thanks to the above references, I was able to hack this together.
