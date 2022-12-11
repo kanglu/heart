@@ -1,6 +1,6 @@
 # Animated Heart using Qt with python and PyQt
 
-My wife and I watched the Lighter & Princess (点燃我，温暖你) Chinese Drama in December of 2022. The show featured an ultra smart programmer, and he coded an animated heart (Episode 5 @ 31:43). My wife challenged me to replicate the animated heart. This is my attempt. I thought it would be fun to do it in Qt and Python.
+My wife and I watched the [Lighter & Princess (点燃我，温暖你)](https://mydramalist.com/68429-the-lighter-and-the-princess-gown) Chinese Drama in December of 2022. The show featured an ultra smart programmer, and he coded an animated heart (Episode 5 @ 31:43). My wife challenged me to replicate the animated heart. This is my attempt. I thought it would be fun to do it in Qt and Python.
 
 This is my first Qt program, and I kind of hacked this together until it looked kind of similar.
 
